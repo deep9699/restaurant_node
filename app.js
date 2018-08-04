@@ -8,6 +8,9 @@ var cors=require('cors');
 var cusine_route=require('./routes/cusine_routes');
 var bill_router=require('./routes/bill_routes');
 var bill_details_router=require('./routes/bill_details_router');
+var customer_router=require('./routes/customer_router');
+var order_rouer=require('./routes/order_router');
+var order_details_rouer=require('./routes/order_details_router');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
@@ -27,6 +30,9 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/cusine',cusine_route);
 app.use('/bill',bill_router);
+app.use('/order',order_rouer);
+app.use('/order_details',order_details_rouer);
+app.use('/customer',customer_router);
 app.use('/bill_details',bill_details_router);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
