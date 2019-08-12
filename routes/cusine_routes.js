@@ -34,5 +34,33 @@ router.get('/:cusine_name?',function(req,res,next){
     
 });
 
+router.post('/',function(req,res,next){
+    console.log(req.body);
+    cusine_mod.addCusine(req.body,function(err,rows){
+        if(err)
+        {
+            res.json(err);
+        }
+        else
+        {
+            res.json(rows);
+        }
+    })
+});
+
+router.put('/',function(req,res,next){
+    cusine_mod.updateCusine(req.body,function(err,rows){
+        if(err)
+        {
+            res.json(err);
+        }
+        else
+        {
+            res.json(rows);
+        }
+    })
+})
+
+
 
 module.exports=router;

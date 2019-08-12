@@ -1,6 +1,4 @@
 var bill_mode = require("../models/bill_model");
-var db = require("../restaurant");
-var bill_details_mod = require("../models/bill_details_model");
 var express = require("express");
 var router = express.Router();
 router.post("/", function(req, res, next) {
